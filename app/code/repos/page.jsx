@@ -3,7 +3,11 @@ import React from 'react'
 import { FaCodeBranch, FaEye, FaStar } from 'react-icons/fa'
 
 async function fetchRepos() {
-    const repos = await fetch("https://api.github.com/users/Cyphermoon/repos");
+    const repos = await fetch("https://api.github.com/users/Cyphermoon/repos", {
+        next: {
+            revalidate: 60
+        }
+    });
 
     return repos.json()
 }

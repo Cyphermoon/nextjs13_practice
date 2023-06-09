@@ -2,7 +2,11 @@ import Link from 'next/link'
 import React from 'react'
 
 async function fetchDirs(name) {
-    const dirs = await fetch(`https://api.github.com/repos/Cyphermoon/${name}/contents`)
+    const dirs = await fetch(`https://api.github.com/repos/Cyphermoon/${name}/contents`, {
+        next: {
+            revalidate: 60
+        }
+    })
 
     return dirs.json()
 }

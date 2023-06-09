@@ -1,9 +1,9 @@
 
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
-      This is the home page
+      <h1>Welcome to cypher land</h1>
     </main>
   )
 }
